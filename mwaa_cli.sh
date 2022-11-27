@@ -18,19 +18,19 @@
 
 # Example List all the dags and display with json format and jq
 # 
-# ./mwaa_cli.sh dags list --output json --region eu-west-1 --profile saml --environment datafactory-v2 | jq 
+# ./mwaa_cli.sh dags list --output json --region eu-west-1 --profile saml --environment airflow-v2 | jq 
 
 # Example List all the dags and display with json format and jq and filter on a specific dag
-# ./mwaa_cli.sh dags list --output json --region eu-west-1 --profile saml --environment datafactory-v2 | jq '.[] | select(.dag_id == "my_dag")'
+# ./mwaa_cli.sh dags list --output json --region eu-west-1 --profile saml --environment airflow-v2 | jq '.[] | select(.dag_id == "my_dag")'
 
 # Example List all the tasks of a dag and display with json format and jq and filter on paused == "False" 
 # ./mwaa_cli.sh dags list --output json --region eu-west-1 --profile saml --environment datafactory-v2 | jq '.[] | select(.paused == "False")'
 
 # List all paused dags
-# ./mwaa_cli.sh dags list --output json --region eu-west-1 --profile saml --environment datafactory-v2 | jq -r '.[] | {dag_id: .dag_id,paused: .paused} | select (.paused == "True") | .dag_id' 
+# ./mwaa_cli.sh dags list --output json --region eu-west-1 --profile saml --environment airflow-v2 | jq -r '.[] | {dag_id: .dag_id,paused: .paused} | select (.paused == "True") | .dag_id' 
 
 # List all dags that are not paused
-# ./mwaa_cli.sh dags list --output json --region eu-west-1 --profile saml --environment datafactory-v2 | jq -r '.[] | {dag_id: .dag_id,paused: .paused} | select (.paused == "False") | .dag_id'
+# ./mwaa_cli.sh dags list --output json --region eu-west-1 --profile saml --environment airflow-v2 | jq -r '.[] | {dag_id: .dag_id,paused: .paused} | select (.paused == "False") | .dag_id'
 
 # Reference of AirFlow commands https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html#cli-commands
 

@@ -1,5 +1,7 @@
 # mwaa_cli 
 
+[![CodeFactor](https://www.codefactor.io/repository/github/raphaelmansuy/mwaa_cli/badge)](https://www.codefactor.io/repository/github/raphaelmansuy/mwaa_cli)
+
 ## Introduction
 
 Amazon Managed Workflows for [Apache Airflow](https://airflow.apache.org/) ([MWAA](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html)) is a managed orchestration service for Apache Airflow. It is a fully managed service that makes it easy to create, schedule, and monitor workflows.

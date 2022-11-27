@@ -14,10 +14,21 @@ This project is a **command line interface** for [MWAA](https://docs.aws.amazon.
 - [curl](https://curl.se/)
 - [aws-cli](https://aws.amazon.com/cli/)
 
-### How to use
+### Install
+
+Just copy and add the [`mwaa_cli.sh`](https://raw.githubusercontent.com/raphaelmansuy/mwaa_cli/main/mwaa_cli.sh) script to your path.
+
+For example:
 
 ```bash
-Usage: mwaa_cli.sh <command> <args>(<options>)
+curl -s https://raw.githubusercontent.com/raphaelmansuy/mwaa_cli/main/mwaa_cli.sh -o /usr/local/bin/mwaa_cli.sh
+chmod +x /usr/local/bin/mwaa_cli.sh
+```
+
+## How to use
+
+```bash
+Usage: mwaa_cli.sh <command> <args>(<options>)
 
 Options:
 
@@ -28,12 +39,12 @@ Options:
 
 Examples:
 
-mwaa_cli.sh dags list
-mwaa_cli.sh dags list-runs -d <dag_id>
-mwaa_cli.sh list_tasks <dag_id>
-mwaa_cli.sh trigger_dag <dag_id>
-mwaa_cli.sh dags pause <dag_id>
-mwaa_cli.sh dags unpause <dag_id>
+mwaa_cli.sh dags list
+mwaa_cli.sh dags list-runs -d <dag_id>
+mwaa_cli.sh list_tasks <dag_id>
+mwaa_cli.sh trigger_dag <dag_id>
+mwaa_cli.sh dags pause <dag_id>
+mwaa_cli.sh dags unpause <dag_id>
 
 ```
 

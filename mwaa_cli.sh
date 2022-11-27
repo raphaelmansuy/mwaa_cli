@@ -41,7 +41,7 @@ ARGS="$*"
 # the command to run
 AIRFLOW_CMD=""
 
-# the command to run
+# get the name of the command
 PROGRAM_NAME=$(basename $0)
 
 # Terminal colors
@@ -79,6 +79,8 @@ function displayUsage {
 
 # Set the variable NEED_HELP to true if the first argument is -h or --help
 NEED_HELP=false
+
+# parse the command line
 
 while [[ $# -gt 0 ]]; do
     key="$1"
@@ -154,7 +156,7 @@ if [ "$PROFILE" = "" ]; then
      exit 1;
 fi
 
-# Clean the command
+# Cleaning the command
 AIRFLOW_CMD=$(echo $AIRFLOW_CMD | sed 's/^ *//;s/ *$//')
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# A simple script to run the Airflow CLI on MWAAA
+# A simple script to run the Airflow CLI on MWAA
 
 # Author: Raphaël MANSUY
 # Email: raphael.mansuy@elitizon.com

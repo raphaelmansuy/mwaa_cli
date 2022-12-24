@@ -67,10 +67,11 @@ function displayUsage {
      log ""
      log "Examples:"
      log ""
+     log "${PROMPT} ${PROGRAM_NAME} healthcheck"
      log "${PROMPT} ${PROGRAM_NAME} dags list"
      log "${PROMPT} ${PROGRAM_NAME} dags list-runs -d <dag_id>"
-     log "${PROMPT} ${PROGRAM_NAME} list_tasks <dag_id>"
-     log "${PROMPT} ${PROGRAM_NAME} trigger_dag <dag_id>"
+     log "${PROMPT} ${PROGRAM_NAME} dags show <dag_id>"
+     log "${PROMPT} ${PROGRAM_NAME} dags trigger <dag_id>"
      log "${PROMPT} ${PROGRAM_NAME} dags pause <dag_id>"
      log "${PROMPT} ${PROGRAM_NAME} dags unpause <dag_id>"
      log ""
@@ -182,6 +183,12 @@ CLI_JSON=$(aws mwaa create-cli-token --name $MWAA_ENVIRONMENT --region $AWS_REGI
 # Parse results
 CLI_TOKEN=$(echo $CLI_JSON | jq -r '.CliToken')
 WEB_SERVER_HOSTNAME=$(echo $CLI_JSON | jq -r '.WebServerHostname')
+
+if [ "$AIRFLOW_CMD" = "healthcheck" ]; then
+     curl -s --request GET "https://$WEB_SERVER_HOSTNAME/health"
+     log ""
+     exit 0;
+fi
 
 # Trigger request of Airflow CLI from Amazon MWAA
 RESPONSE=$(curl -s --request POST "https://$WEB_SERVER_HOSTNAME/aws_mwaa/cli" \
